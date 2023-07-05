@@ -41,11 +41,15 @@ console.log(dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
 */
 
 function ortalamaBul(Array2 /* kodlar buraya */) {
-  let ortalama = Array2.reduce((accumulator, currentValue) => {
-    return accumulator + currentValue;
-  }, 0);
-  // kodlar buraya
-  return ortalama / Array2.length;
+  //let ortalama = Array2.reduce((accumulator, currentValue) => {
+  // return accumulator + currentValue;
+  // }, 0);
+  // return ortalama / Array2.length;
+  let total = 0;
+  for (let i = 0; i < Array2.length; i++) {
+    total += Array2[i];
+  }
+  return total / Array2.length;
 }
 console.log(ortalamaBul([109, 216, 288, 143, 71, 185, -278, 194, 5]));
 
