@@ -16,10 +16,12 @@
   örnek output: ""
 */
 
-function dosyaAdiniBul(/* kodlar buraya */) {
+function dosyaAdiniBul(path /* kodlar buraya */) {
+  const bolunenDosyaAdi = path.split("/");
+  return bolunenDosyaAdi[bolunenDosyaAdi.length - 1];
   // kodlar buraya
 }
-
+console.log(dosyaAdiniBul("C:/Users/johnsmith/Music/Beethoven_5.mp3"));
 /*
   GÖREV 2
   - Input:  Bir sayı arrayini parametre olarak alacak bir fonksiyon oluştur.
@@ -38,9 +40,14 @@ function dosyaAdiniBul(/* kodlar buraya */) {
   örnek output: 104
 */
 
-function ortalamaBul(/* kodlar buraya */) {
+function ortalamaBul(Array2 /* kodlar buraya */) {
+  let ortalama = Array2.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  }, 0);
   // kodlar buraya
+  return ortalama / Array2.length;
 }
+console.log(ortalamaBul([109, 216, 288, 143, 71, 185, -278, 194, 5]));
 
 /*
   GÖREV 3
@@ -62,9 +69,25 @@ function ortalamaBul(/* kodlar buraya */) {
   örnek output: [109, 216, 288, 143, 185, 194]
 */
 
-function ortalamadanBuyukleriBul(/* kodlar buraya */) {
-  // kodlar buraya
+function ortalamadanBuyukleriBul(sayiArray2, ortBul2 /* kodlar buraya */) {
+  let ort2 = ortBul2(sayiArray2);
+  // let buyukSayilar = sayiArray2.filter((x) => x >= ort2);
+  //  return buyukSayilar;
+  let newArray2 = [];
+  for (let i = 0; i < sayiArray2.length; i++) {
+    if (sayiArray2[i] >= ort2) {
+      newArray2.push(sayiArray2[i]);
+    }
+  }
+
+  return newArray2;
 }
+console.log(
+  ortalamadanBuyukleriBul(
+    [109, 216, 288, 143, 71, 185, -278, 194, 5],
+    ortalamaBul
+  )
+);
 
 /* !!!! Burdan aşağısını değiştirmeyin !!!! */
 function as() {
