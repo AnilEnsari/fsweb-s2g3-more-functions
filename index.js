@@ -45,11 +45,15 @@ function ortalamaBul(Array2 /* kodlar buraya */) {
   // return accumulator + currentValue;
   // }, 0);
   // return ortalama / Array2.length;
-  let total = 0;
-  for (let i = 0; i < Array2.length; i++) {
-    total += Array2[i];
+  if (Array2.length === 0) {
+    return null;
+  } else {
+    let total = 0;
+    for (let i = 0; i < Array2.length; i++) {
+      total += Array2[i];
+    }
+    return total / Array2.length;
   }
-  return total / Array2.length;
 }
 console.log(ortalamaBul([109, 216, 288, 143, 71, 185, -278, 194, 5]));
 
@@ -78,13 +82,17 @@ function ortalamadanBuyukleriBul(sayiArray2, ortBul2 /* kodlar buraya */) {
   // let buyukSayilar = sayiArray2.filter((x) => x >= ort2);
   //  return buyukSayilar;
   let newArray2 = [];
-  for (let i = 0; i < sayiArray2.length; i++) {
-    if (sayiArray2[i] >= ort2) {
-      newArray2.push(sayiArray2[i]);
+  if (sayiArray2.length === 0) {
+    return null;
+  } else {
+    for (let i = 0; i < sayiArray2.length; i++) {
+      if (sayiArray2[i] >= ort2) {
+        newArray2.push(sayiArray2[i]);
+      }
     }
-  }
 
-  return newArray2;
+    return newArray2;
+  }
 }
 console.log(
   ortalamadanBuyukleriBul(
